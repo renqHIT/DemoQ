@@ -1,0 +1,2 @@
+# DemoQ
+Django demo

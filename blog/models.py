@@ -9,12 +9,14 @@ class Blog(models.Model):
     def __unicode__(self):
         return self.name
 
+
 class Author(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
 
     def __unicode__(self):
         return self.name
+
 
 class Entry(models.Model):
     blog = models.ForeignKey(Blog)

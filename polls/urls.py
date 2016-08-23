@@ -1,6 +1,10 @@
 from django.conf.urls import patterns
+from django.conf.urls import url
+from polls.views import homepage
+import polls
 
-urlpatterns = patterns('',
-                       # (r'^blog/$', 'blog.views.page'),
-                       # (r'^blog/page(?P<num>\d+)/$', 'blog.views.page'),
-                       )
+
+urlpatterns = [
+    url(r'^$', polls.views.homepage),
+    url(r'^callback/$', polls.views.callback),
+]

@@ -39,14 +39,14 @@ class UserViewSet(viewsets.ModelViewSet):
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 
-
 # Wire up our API using automatic URL routing
 # Additionally, include login URLs for the browsable API
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^polls/', include(polls.urls)),
-    url(r'^blog/', include(blog.urls)),
+    url(r'^polls/', include('polls.urls')),
+    url(r'^blog/', include('blog.urls')),
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api-token-auth/', views.obtain_auth_token),
+    # url(r'^', include(router.urls)),
+    # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # url(r'^api-token-auth/', views.obtain_auth_token),
 ]

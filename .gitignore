@@ -109,3 +109,4 @@ target/
 # Created by .ignore support plugin (hsz.mobi)
 
 settings.py
+DemoQ/settings.py

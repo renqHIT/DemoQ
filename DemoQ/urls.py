@@ -19,6 +19,17 @@ import blog.urls
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from rest_framework.authtoken import views
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
+
+@api_view(('GET',))
+def root_endpoint(request, format=None):
+    """
+    test api view
+    """
+    endpoints = []
+    return Response(endpoints)
 
 
 # Serializers define the API representation.

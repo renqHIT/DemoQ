@@ -9,6 +9,12 @@ urlopen = urllib2.urlopen
 Request = urllib2.Request
 
 
+def test_request_factory(request):
+    from rest_framework.test import APIRequestFactory
+    factory = APIRequestFactory()
+    request = factory.post('/notes/', {'title': 'new idea'})
+
+
 def homepage(request):
     client = os.environ['GH_BASIC_CLIENT_ID']
     secret = os.environ['GH_BASIC_SECRET_ID']
